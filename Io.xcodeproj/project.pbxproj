@@ -24,6 +24,10 @@
 		B8B32C862BB9FD47005587DC /* HomeNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C852BB9FD47005587DC /* HomeNavigationStack.swift */; };
 		B8B32C892BB9FD8B005587DC /* PlaylistRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C882BB9FD8B005587DC /* PlaylistRow.swift */; };
 		B8B32C8C2BB9FDCF005587DC /* PlaylistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C8B2BB9FDCF005587DC /* PlaylistDetailView.swift */; };
+		B8B32C8E2BB9FE1A005587DC /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C8D2BB9FE1A005587DC /* AppTabView.swift */; };
+		B8B32C912BB9FF57005587DC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C902BB9FF57005587DC /* Extensions.swift */; };
+		B8B32C932BBA00B0005587DC /* LibraryNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C922BBA00B0005587DC /* LibraryNavigationStack.swift */; };
+		B8B32C952BBA01BB005587DC /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C942BBA01BB005587DC /* PlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		B8B32C852BB9FD47005587DC /* HomeNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationStack.swift; sourceTree = "<group>"; };
 		B8B32C882BB9FD8B005587DC /* PlaylistRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistRow.swift; sourceTree = "<group>"; };
 		B8B32C8B2BB9FDCF005587DC /* PlaylistDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDetailView.swift; sourceTree = "<group>"; };
+		B8B32C8D2BB9FE1A005587DC /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
+		B8B32C902BB9FF57005587DC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B8B32C922BBA00B0005587DC /* LibraryNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryNavigationStack.swift; sourceTree = "<group>"; };
+		B8B32C942BBA01BB005587DC /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,7 @@
 				B8B32C6E2BB9FC65005587DC /* Home */,
 				B8B32C722BB9FC78005587DC /* Player */,
 				B8B32C8A2BB9FDC6005587DC /* Playlist */,
+				B8B32C8F2BB9FF52005587DC /* General */,
 				B8B32C712BB9FC74005587DC /* Components */,
 			);
 			path = Io;
@@ -110,6 +119,7 @@
 				B8B32C732BB9FCCC005587DC /* AppScreen.swift */,
 				B8B32C752BB9FCCC005587DC /* AppSidebar.swift */,
 				B8B32C762BB9FCCC005587DC /* Navigator.swift */,
+				B8B32C8D2BB9FE1A005587DC /* AppTabView.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -134,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				B8B32C812BB9FD23005587DC /* MusicLibraryManager.swift */,
+				B8B32C922BBA00B0005587DC /* LibraryNavigationStack.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -151,6 +162,7 @@
 		B8B32C722BB9FC78005587DC /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				B8B32C942BBA01BB005587DC /* PlayerView.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -162,6 +174,14 @@
 				B8B32C882BB9FD8B005587DC /* PlaylistRow.swift */,
 			);
 			path = Playlist;
+			sourceTree = "<group>";
+		};
+		B8B32C8F2BB9FF52005587DC /* General */ = {
+			isa = PBXGroup;
+			children = (
+				B8B32C902BB9FF57005587DC /* Extensions.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +268,10 @@
 				B8B32C822BB9FD23005587DC /* MusicLibraryManager.swift in Sources */,
 				B8B32C8C2BB9FDCF005587DC /* PlaylistDetailView.swift in Sources */,
 				B8B32C842BB9FD3C005587DC /* SearchNavigationStack.swift in Sources */,
+				B8B32C932BBA00B0005587DC /* LibraryNavigationStack.swift in Sources */,
+				B8B32C912BB9FF57005587DC /* Extensions.swift in Sources */,
+				B8B32C8E2BB9FE1A005587DC /* AppTabView.swift in Sources */,
+				B8B32C952BBA01BB005587DC /* PlayerView.swift in Sources */,
 				B8B32C772BB9FCCC005587DC /* AppScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

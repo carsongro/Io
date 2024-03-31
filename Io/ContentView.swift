@@ -8,14 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.prefersTabNavigation) private var prefersTabNavigation
+    
+    @State private var navigator = Navigator.shared
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Group {
+            if navigator.isWelcomeViewPresented {
+                WelcomeView(musicAuthorizationStatus: $navigator.musicAuthorizationStatus)
+            } else {
+                if prefersTabNavigation {
+                    AppTabView()
+                } else {
+                    VStack {
+                        NavigationSplitView {
+                            AppSidebar()
+                                .navigationSplitViewColumnWidth(ideal: 250, max: 500)
+                        } detail: {
+                            AppDetailColumn(screen: navigator.selectedScreen)
+                        }
+                        
+                        PlayerView()
+                    }
+                }
+            }
         }
-        .padding()
+        .environment(navigator)
+        .environment(MusicLibraryManager.shared)
     }
 }
 

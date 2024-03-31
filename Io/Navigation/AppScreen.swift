@@ -11,6 +11,7 @@ import MusicKit
 enum AppScreen: Codable, Hashable, Identifiable {
     case home
     case search
+    case library
     case playlist(Playlist)
     
     var id: AppScreen { self }
@@ -26,6 +27,9 @@ extension AppScreen {
         case .search:
             Label("Search", systemImage: "magnifyingglass")
                 .imageScale(.large)
+        case .library:
+            Label("Library", systemImage: "books.vertical.fill")
+                .imageScale(.large)
         case .playlist(let playlist):
             PlaylistRow(playlist: playlist)
         }
@@ -38,6 +42,8 @@ extension AppScreen {
             HomeNavigationStack()
         case .search:
             SearchNavigationStack()
+        case .library:
+            LibraryNavigationStack()
         case .playlist(let playlist):
             PlaylistDetailView(playlist: playlist)
         }
