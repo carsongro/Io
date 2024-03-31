@@ -13,14 +13,18 @@ struct AppTabView: View {
     var body: some View {
         @Bindable var navigator = navigator
         TabView(selection: $navigator.selectedScreen) {
-            AppScreen.home.destination
-                .tabItem { AppScreen.home.label }
-            
-            AppScreen.search.destination
-                .tabItem { AppScreen.search.label }
+            AppScreen.browse.destination
+                .tag(AppScreen.browse)
+                .tabItem { AppScreen.browse.label }
             
             AppScreen.library.destination
+                .tag(AppScreen.library)
                 .tabItem { AppScreen.library.label }
+            
+            AppScreen.search.destination
+                .tag(AppScreen.search)
+                .tabItem { AppScreen.search.label }
+            
         }
     }
 }

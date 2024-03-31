@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MusicKit
 
 struct PrefersTabNavigationEnvironmentKey: EnvironmentKey {
     static var defaultValue: Bool = false
@@ -29,3 +30,32 @@ extension PrefersTabNavigationEnvironmentKey: UITraitBridgedEnvironmentKey {
     }
 }
 #endif
+
+struct NavigationDestinations: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .navigationDestination(for: Playlist.self, destination: PlaylistDetailView.init)
+            .navigationDestination(for: MusicPersonalRecommendation.Item.self) { item in
+                switch item {
+                case .playlist(let playlist):
+                    PlaylistDetailView(playlist: playlist)
+                default:
+                    EmptyView()
+                }
+            }
+    }
+}
+
+extension View {
+    func musicNavigationDestinations() -> some View {
+        self
+            .modifier(NavigationDestinations())
+    }
+}
+
+extension UINavigationController {
+    open override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        navigationBar.topItem?.backButtonDisplayMode = .minimal
+    }
+}

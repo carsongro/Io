@@ -21,13 +21,20 @@
 		B8B32C802BB9FCFE005587DC /* SubscriptionOfferableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C7D2BB9FCFE005587DC /* SubscriptionOfferableView.swift */; };
 		B8B32C822BB9FD23005587DC /* MusicLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C812BB9FD23005587DC /* MusicLibraryManager.swift */; };
 		B8B32C842BB9FD3C005587DC /* SearchNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C832BB9FD3C005587DC /* SearchNavigationStack.swift */; };
-		B8B32C862BB9FD47005587DC /* HomeNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C852BB9FD47005587DC /* HomeNavigationStack.swift */; };
+		B8B32C862BB9FD47005587DC /* BrowseNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C852BB9FD47005587DC /* BrowseNavigationStack.swift */; };
 		B8B32C892BB9FD8B005587DC /* PlaylistRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C882BB9FD8B005587DC /* PlaylistRow.swift */; };
 		B8B32C8C2BB9FDCF005587DC /* PlaylistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C8B2BB9FDCF005587DC /* PlaylistDetailView.swift */; };
 		B8B32C8E2BB9FE1A005587DC /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C8D2BB9FE1A005587DC /* AppTabView.swift */; };
 		B8B32C912BB9FF57005587DC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C902BB9FF57005587DC /* Extensions.swift */; };
 		B8B32C932BBA00B0005587DC /* LibraryNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C922BBA00B0005587DC /* LibraryNavigationStack.swift */; };
 		B8B32C952BBA01BB005587DC /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C942BBA01BB005587DC /* PlayerView.swift */; };
+		B8B32C972BBA054F005587DC /* BrowseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C962BBA054F005587DC /* BrowseModel.swift */; };
+		B8B32C992BBA083E005587DC /* MediumMusicItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C982BBA083E005587DC /* MediumMusicItemCell.swift */; };
+		B8B32C9B2BBA0B2E005587DC /* HScrollMusicItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C9A2BBA0B2E005587DC /* HScrollMusicItemView.swift */; };
+		B8B32C9D2BBA0E34005587DC /* TrackListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C9C2BBA0E34005587DC /* TrackListView.swift */; };
+		B8B32C9F2BBA0FD4005587DC /* TrackRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C9E2BBA0FD4005587DC /* TrackRowView.swift */; };
+		B8B32CA22BBA154D005587DC /* CollectionPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32CA12BBA154D005587DC /* CollectionPlayButton.swift */; };
+		B8B32CA42BBA159A005587DC /* ProminentButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32CA32BBA159A005587DC /* ProminentButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,17 +50,24 @@
 		B8B32C752BB9FCCC005587DC /* AppSidebar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSidebar.swift; sourceTree = "<group>"; };
 		B8B32C762BB9FCCC005587DC /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		B8B32C7B2BB9FCFE005587DC /* MusicItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MusicItemCell.swift; path = Io/Components/MusicItemCell.swift; sourceTree = SOURCE_ROOT; };
-		B8B32C7C2BB9FCFE005587DC /* CollectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionHeader.swift; path = Io/Components/CollectionHeader.swift; sourceTree = SOURCE_ROOT; };
+		B8B32C7C2BB9FCFE005587DC /* CollectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionHeader.swift; path = Io/Components/MusicItemCollections/CollectionHeader.swift; sourceTree = SOURCE_ROOT; };
 		B8B32C7D2BB9FCFE005587DC /* SubscriptionOfferableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionOfferableView.swift; path = Io/Components/SubscriptionOfferableView.swift; sourceTree = SOURCE_ROOT; };
 		B8B32C812BB9FD23005587DC /* MusicLibraryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicLibraryManager.swift; sourceTree = "<group>"; };
 		B8B32C832BB9FD3C005587DC /* SearchNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigationStack.swift; sourceTree = "<group>"; };
-		B8B32C852BB9FD47005587DC /* HomeNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationStack.swift; sourceTree = "<group>"; };
+		B8B32C852BB9FD47005587DC /* BrowseNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseNavigationStack.swift; sourceTree = "<group>"; };
 		B8B32C882BB9FD8B005587DC /* PlaylistRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistRow.swift; sourceTree = "<group>"; };
 		B8B32C8B2BB9FDCF005587DC /* PlaylistDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDetailView.swift; sourceTree = "<group>"; };
 		B8B32C8D2BB9FE1A005587DC /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		B8B32C902BB9FF57005587DC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B8B32C922BBA00B0005587DC /* LibraryNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryNavigationStack.swift; sourceTree = "<group>"; };
 		B8B32C942BBA01BB005587DC /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		B8B32C962BBA054F005587DC /* BrowseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseModel.swift; sourceTree = "<group>"; };
+		B8B32C982BBA083E005587DC /* MediumMusicItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumMusicItemCell.swift; sourceTree = "<group>"; };
+		B8B32C9A2BBA0B2E005587DC /* HScrollMusicItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HScrollMusicItemView.swift; sourceTree = "<group>"; };
+		B8B32C9C2BBA0E34005587DC /* TrackListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListView.swift; sourceTree = "<group>"; };
+		B8B32C9E2BBA0FD4005587DC /* TrackRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRowView.swift; sourceTree = "<group>"; };
+		B8B32CA12BBA154D005587DC /* CollectionPlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPlayButton.swift; sourceTree = "<group>"; };
+		B8B32CA32BBA159A005587DC /* ProminentButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProminentButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +109,7 @@
 				B8B32C6D2BB9FC61005587DC /* Navigation */,
 				B8B32C702BB9FC71005587DC /* Library */,
 				B8B32C6F2BB9FC6D005587DC /* Search */,
-				B8B32C6E2BB9FC65005587DC /* Home */,
+				B8B32C6E2BB9FC65005587DC /* Browse */,
 				B8B32C722BB9FC78005587DC /* Player */,
 				B8B32C8A2BB9FDC6005587DC /* Playlist */,
 				B8B32C8F2BB9FF52005587DC /* General */,
@@ -124,12 +138,13 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		B8B32C6E2BB9FC65005587DC /* Home */ = {
+		B8B32C6E2BB9FC65005587DC /* Browse */ = {
 			isa = PBXGroup;
 			children = (
-				B8B32C852BB9FD47005587DC /* HomeNavigationStack.swift */,
+				B8B32C962BBA054F005587DC /* BrowseModel.swift */,
+				B8B32C852BB9FD47005587DC /* BrowseNavigationStack.swift */,
 			);
-			path = Home;
+			path = Browse;
 			sourceTree = "<group>";
 		};
 		B8B32C6F2BB9FC6D005587DC /* Search */ = {
@@ -152,9 +167,12 @@
 		B8B32C712BB9FC74005587DC /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B8B32C7C2BB9FCFE005587DC /* CollectionHeader.swift */,
 				B8B32C7B2BB9FCFE005587DC /* MusicItemCell.swift */,
 				B8B32C7D2BB9FCFE005587DC /* SubscriptionOfferableView.swift */,
+				B8B32C982BBA083E005587DC /* MediumMusicItemCell.swift */,
+				B8B32C9A2BBA0B2E005587DC /* HScrollMusicItemView.swift */,
+				B8B32CA02BBA0FDC005587DC /* MusicItemCollections */,
+				B8B32CA32BBA159A005587DC /* ProminentButtonStyle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -182,6 +200,17 @@
 				B8B32C902BB9FF57005587DC /* Extensions.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		B8B32CA02BBA0FDC005587DC /* MusicItemCollections */ = {
+			isa = PBXGroup;
+			children = (
+				B8B32C7C2BB9FCFE005587DC /* CollectionHeader.swift */,
+				B8B32C9C2BBA0E34005587DC /* TrackListView.swift */,
+				B8B32C9E2BBA0FD4005587DC /* TrackRowView.swift */,
+				B8B32CA12BBA154D005587DC /* CollectionPlayButton.swift */,
+			);
+			path = MusicItemCollections;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,16 +283,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8B32CA42BBA159A005587DC /* ProminentButtonStyle.swift in Sources */,
 				B8B32C892BB9FD8B005587DC /* PlaylistRow.swift in Sources */,
+				B8B32CA22BBA154D005587DC /* CollectionPlayButton.swift in Sources */,
 				B8B32C7A2BB9FCCC005587DC /* Navigator.swift in Sources */,
 				B8B32C782BB9FCCC005587DC /* AppDetailColumn.swift in Sources */,
 				B8B32C5F2BB9FC1B005587DC /* ContentView.swift in Sources */,
+				B8B32C9D2BBA0E34005587DC /* TrackListView.swift in Sources */,
 				B8B32C7F2BB9FCFE005587DC /* CollectionHeader.swift in Sources */,
 				B8B32C792BB9FCCC005587DC /* AppSidebar.swift in Sources */,
 				B8B32C6C2BB9FC5F005587DC /* WelcomeView.swift in Sources */,
+				B8B32C9B2BBA0B2E005587DC /* HScrollMusicItemView.swift in Sources */,
 				B8B32C802BB9FCFE005587DC /* SubscriptionOfferableView.swift in Sources */,
 				B8B32C5D2BB9FC1B005587DC /* IoApp.swift in Sources */,
-				B8B32C862BB9FD47005587DC /* HomeNavigationStack.swift in Sources */,
+				B8B32C862BB9FD47005587DC /* BrowseNavigationStack.swift in Sources */,
 				B8B32C7E2BB9FCFE005587DC /* MusicItemCell.swift in Sources */,
 				B8B32C822BB9FD23005587DC /* MusicLibraryManager.swift in Sources */,
 				B8B32C8C2BB9FDCF005587DC /* PlaylistDetailView.swift in Sources */,
@@ -272,7 +305,10 @@
 				B8B32C912BB9FF57005587DC /* Extensions.swift in Sources */,
 				B8B32C8E2BB9FE1A005587DC /* AppTabView.swift in Sources */,
 				B8B32C952BBA01BB005587DC /* PlayerView.swift in Sources */,
+				B8B32C992BBA083E005587DC /* MediumMusicItemCell.swift in Sources */,
+				B8B32C9F2BBA0FD4005587DC /* TrackRowView.swift in Sources */,
 				B8B32C772BB9FCCC005587DC /* AppScreen.swift in Sources */,
+				B8B32C972BBA054F005587DC /* BrowseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +442,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Io needs access to Apple Music to help you discover.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -446,6 +483,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Io needs access to Apple Music to help you discover.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

@@ -15,8 +15,8 @@ struct AppSidebar: View {
         @Bindable var navigator = navigator
         List(selection: $navigator.selectedScreen) {
             Section {
-                NavigationLink(value: AppScreen.home) {
-                    AppScreen.home.label
+                NavigationLink(value: AppScreen.browse) {
+                    AppScreen.browse.label
                 }
                 
                 NavigationLink(value: AppScreen.search) {

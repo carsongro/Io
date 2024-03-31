@@ -41,7 +41,7 @@ struct WelcomeView: View {
                     Button(buttonText) {
                         handleButtonPressed()
                     }
-                    .buttonStyle(.borderedProminent)
+                    .buttonStyle(.prominent)
                     .buttonBorderShape(.capsule)
                 }
             }

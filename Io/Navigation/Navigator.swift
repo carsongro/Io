@@ -30,5 +30,5 @@ final class Navigator {
     
     //MARK: - Navigation
     
-    var selectedScreen: AppScreen? = .home
+    var selectedScreen: AppScreen? = .browse
 }

@@ -17,16 +17,29 @@ struct PlaylistDetailView: View {
         Group {
             if let detailedPlaylist {
                 List {
-                    Section { } header: {
-                        CollectionHeader(
-                            artwork: detailedPlaylist.artwork,
-                            title: detailedPlaylist.name,
-                            ownerName: detailedPlaylist.curatorName,
-                            description: detailedPlaylist.description,
-                            itemCount: detailedPlaylist.tracks?.count
-                        )
+                    Section {
+                        VStack(spacing: 10) {
+                            CollectionHeader(
+                                artwork: detailedPlaylist.artwork,
+                                title: detailedPlaylist.name,
+                                ownerName: detailedPlaylist.curatorName,
+                                description: detailedPlaylist.description,
+                                itemCount: detailedPlaylist.tracks?.count
+                            )
+                            
+                            CollectionPlayButton(playlist)
+                                .frame(maxWidth: .infinity)
+                        }
+                    }
+                    .listRowSeparator(.hidden, edges: .top)
+                    
+                    Section {
+                        TrackListView(showArtwork: true, tracks: detailedPlaylist.tracks)
                     }
                 }
+                .listSectionSpacing(10)
+                .listStyle(.plain)
+                .contentMargins(.bottom, 10, for: .scrollContent)
             } else {
                 Color.clear
             }

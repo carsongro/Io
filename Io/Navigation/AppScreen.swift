@@ -9,7 +9,7 @@ import SwiftUI
 import MusicKit
 
 enum AppScreen: Codable, Hashable, Identifiable {
-    case home
+    case browse
     case search
     case library
     case playlist(Playlist)
@@ -21,8 +21,8 @@ extension AppScreen {
     @ViewBuilder
     var label: some View {
         switch self {
-        case .home:
-            Label("Home", systemImage: "music.note.house.fill")
+        case .browse:
+            Label("Browse", systemImage: "square.grid.2x2.fill")
                 .imageScale(.large)
         case .search:
             Label("Search", systemImage: "magnifyingglass")
@@ -38,8 +38,8 @@ extension AppScreen {
     @ViewBuilder
     var destination: some View {
         switch self {
-        case .home:
-            HomeNavigationStack()
+        case .browse:
+            BrowseNavigationStack()
         case .search:
             SearchNavigationStack()
         case .library:
