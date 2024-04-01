@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MusicKit
 
 struct BrowseNavigationStack: View {
     @State private var model = BrowseModel()
@@ -22,8 +23,8 @@ struct BrowseNavigationStack: View {
                             .padding(.leading, 16)
                         
                         switch section {
-                        case .items(let items): 
-                            HScrollMusicItemView(items: items)
+                        case .items(let items):
+                            MusicItemCollectionHScrollView(items: items)
                         }
                     }
                 }
@@ -34,7 +35,6 @@ struct BrowseNavigationStack: View {
             .contentMargins(.bottom, 65, for: .scrollContent)
             .listStyle(.plain)
             .navigationTitle("Browse")
-            .musicNavigationDestinations()
         }
     }
 }

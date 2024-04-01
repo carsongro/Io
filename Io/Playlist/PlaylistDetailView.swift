@@ -32,6 +32,7 @@ struct PlaylistDetailView: View {
                         }
                     }
                     .listRowSeparator(.hidden, edges: .top)
+                    .background(GeometryReader { Color.clear.preference(key: ScrollOffsetPreferenceKey.self, value: -$0.frame(in: .named("scroll")).origin.y) })
                     
                     Section {
                         TrackListView(showArtwork: true, tracks: detailedPlaylist.tracks)
@@ -40,10 +41,12 @@ struct PlaylistDetailView: View {
                 .listSectionSpacing(10)
                 .listStyle(.plain)
                 .contentMargins(.bottom, 10, for: .scrollContent)
+                .scrollIndicators(.hidden)
             } else {
                 Color.clear
             }
         }
+        .coordinateSpace(name: "scroll")
         .canOfferSubscription(for: playlist.id, messageIdentifier: .playMusic)
         .task { await getDetailedPlaylist() }
     }

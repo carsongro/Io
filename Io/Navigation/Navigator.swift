@@ -31,4 +31,7 @@ final class Navigator {
     //MARK: - Navigation
     
     var selectedScreen: AppScreen? = .browse
+    
+    var selectedItem: MusicPersonalRecommendation.Item?
+    var items: MusicItemCollection<MusicPersonalRecommendation.Item>?
 }
