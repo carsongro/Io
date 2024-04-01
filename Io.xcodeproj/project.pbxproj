@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B87E4E042BBA3E9900B03BF9 /* ScrollOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87E4E032BBA3E9900B03BF9 /* ScrollOffsetPreferenceKey.swift */; };
+		B87E4E072BBA498C00B03BF9 /* MusicItemCollectionDetailModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87E4E062BBA498C00B03BF9 /* MusicItemCollectionDetailModifier.swift */; };
 		B8B32C5D2BB9FC1B005587DC /* IoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C5C2BB9FC1B005587DC /* IoApp.swift */; };
 		B8B32C5F2BB9FC1B005587DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C5E2BB9FC1B005587DC /* ContentView.swift */; };
 		B8B32C612BB9FC1C005587DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8B32C602BB9FC1C005587DC /* Assets.xcassets */; };
@@ -40,7 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B87E4E032BBA3E9900B03BF9 /* ScrollOffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOffsetPreferenceKey.swift; sourceTree = "<group>"; };
+		B87E4E062BBA498C00B03BF9 /* MusicItemCollectionDetailModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItemCollectionDetailModifier.swift; sourceTree = "<group>"; };
 		B8B32C592BB9FC1B005587DC /* Io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Io.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B32C5C2BB9FC1B005587DC /* IoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoApp.swift; sourceTree = "<group>"; };
 		B8B32C5E2BB9FC1B005587DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		B8B32C762BB9FCCC005587DC /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		B8B32C7B2BB9FCFE005587DC /* MusicItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MusicItemCell.swift; path = Io/Components/MusicItemCell.swift; sourceTree = SOURCE_ROOT; };
 		B8B32C7C2BB9FCFE005587DC /* CollectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionHeader.swift; path = Io/Components/MusicItemCollections/CollectionHeader.swift; sourceTree = SOURCE_ROOT; };
-		B8B32C7D2BB9FCFE005587DC /* SubscriptionOfferableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionOfferableView.swift; path = Io/Components/SubscriptionOfferableView.swift; sourceTree = SOURCE_ROOT; };
+		B8B32C7D2BB9FCFE005587DC /* SubscriptionOfferableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionOfferableView.swift; path = Io/Components/MusicHelpers/SubscriptionOfferableView.swift; sourceTree = SOURCE_ROOT; };
 		B8B32C812BB9FD23005587DC /* MusicLibraryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicLibraryManager.swift; sourceTree = "<group>"; };
 		B8B32C832BB9FD3C005587DC /* SearchNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigationStack.swift; sourceTree = "<group>"; };
 		B8B32C852BB9FD47005587DC /* BrowseNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseNavigationStack.swift; sourceTree = "<group>"; };
@@ -85,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B87E4E052BBA495A00B03BF9 /* MusicHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				B8B32C7D2BB9FCFE005587DC /* SubscriptionOfferableView.swift */,
+				B87E4E062BBA498C00B03BF9 /* MusicItemCollectionDetailModifier.swift */,
+			);
+			path = MusicHelpers;
+			sourceTree = "<group>";
+		};
 		B8B32C502BB9FC1B005587DC = {
 			isa = PBXGroup;
 			children = (
@@ -172,13 +181,12 @@
 		B8B32C712BB9FC74005587DC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B87E4E052BBA495A00B03BF9 /* MusicHelpers */,
 				B8B32CA02BBA0FDC005587DC /* MusicItemCollections */,
 				B8B32CA32BBA159A005587DC /* ProminentButtonStyle.swift */,
 				B8B32C7B2BB9FCFE005587DC /* MusicItemCell.swift */,
-				B8B32C7D2BB9FCFE005587DC /* SubscriptionOfferableView.swift */,
 				B8B32C982BBA083E005587DC /* MediumMusicItemCell.swift */,
 				B8B32C9A2BBA0B2E005587DC /* MusicItemCollectionHScrollView.swift */,
-				B87E4E032BBA3E9900B03BF9 /* ScrollOffsetPreferenceKey.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -301,11 +309,11 @@
 				B8B32C892BB9FD8B005587DC /* PlaylistRow.swift in Sources */,
 				B8B32CA22BBA154D005587DC /* CollectionPlayButton.swift in Sources */,
 				B8B32C7A2BB9FCCC005587DC /* Navigator.swift in Sources */,
+				B87E4E072BBA498C00B03BF9 /* MusicItemCollectionDetailModifier.swift in Sources */,
 				B8B32C782BB9FCCC005587DC /* AppDetailColumn.swift in Sources */,
 				B8B32CA72BBA1817005587DC /* BrowseHScrollCardView.swift in Sources */,
 				B8B32C5F2BB9FC1B005587DC /* ContentView.swift in Sources */,
 				B8B32C9D2BBA0E34005587DC /* TrackListView.swift in Sources */,
-				B87E4E042BBA3E9900B03BF9 /* ScrollOffsetPreferenceKey.swift in Sources */,
 				B8B32C7F2BB9FCFE005587DC /* CollectionHeader.swift in Sources */,
 				B8B32C792BB9FCCC005587DC /* AppSidebar.swift in Sources */,
 				B8B32C6C2BB9FC5F005587DC /* WelcomeView.swift in Sources */,
@@ -479,7 +487,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
@@ -520,7 +528,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";

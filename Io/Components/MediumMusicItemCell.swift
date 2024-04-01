@@ -18,10 +18,10 @@ struct MediumMusicItemCell: View {
     var body: some View {
         VStack(alignment: .leading) {
             if let artwork {
-                ArtworkImage(artwork, width: 185, height: 185)
+                ArtworkImage(artwork, width: 175, height: 175)
                     .overlay(ContainerRelativeShape().stroke(.ultraThinMaterial, lineWidth: 0.5))
                     .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                    .aspectRatio(contentMode: .fit)
+                    
                     .shadow(color: .black.opacity(0.175), radius: 8, y: 10)
             }
             
@@ -35,6 +35,6 @@ struct MediumMusicItemCell: View {
                     .font(.subheadline)
             }
         }
-        .frame(width: 185)
+        .frame(width: 175)
     }
 }

@@ -29,6 +29,8 @@ struct TrackListView: View {
                         trailing: 20
                     )
                 )
+                
+                Divider()
             }
         }
     }

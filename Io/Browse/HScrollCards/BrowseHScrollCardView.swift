@@ -13,36 +13,41 @@ struct BrowseHScrollCardView: View {
     
     let items: MusicItemCollection<MusicPersonalRecommendation.Item>
     
-    @State private var selectedItemID: MusicPersonalRecommendation.Item.ID?
-    
-    init(items: MusicItemCollection<MusicPersonalRecommendation.Item>, selectedItemID: MusicPersonalRecommendation.Item.ID?) {
-        self.items = items
-        self.selectedItemID = selectedItemID
-    }
+    @State var selectedItemID: MusicPersonalRecommendation.Item.ID?
     
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack {
-                ForEach(items) { item in
-                    switch item {
-                    case .playlist(let playlist):
-                        PlaylistDetailView(playlist: playlist)
-                            .containerRelativeFrame(.horizontal)
-                            .clipShape(RoundedRectangle(cornerRadius: 8))
-                    default:
-                        EmptyView()
+        ScrollViewReader { proxy in
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(items) { item in
+                        Group {
+                            switch item {
+                            case .playlist(let playlist):
+                                PlaylistDetailView(playlist: playlist) { dismiss() }
+                                    .containerRelativeFrame(.horizontal)
+                                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                            default:
+                                EmptyView()
+                            }
+                        }
+                        .id(item.id)
+                        .scrollTransition { content, phase in
+                            content
+                                .opacity(phase.isIdentity ? 1 : 0.2)
+                                .scaleEffect(phase.isIdentity ? 1 : 0.9)
+                                .blur(radius: phase.isIdentity ? 0 : 8)
+                        }
                     }
                 }
+                .scrollTargetLayout()
             }
-            .scrollTargetLayout()
-        }
-        .scrollTargetBehavior(.viewAligned)
-        .contentMargins(20, for: .scrollContent)
-        .listRowInsets(EdgeInsets())
-        .scrollPosition(id: $selectedItemID)
-        .ignoresSafeArea(edges: .bottom)
-        .onPreferenceChange(ScrollOffsetPreferenceKey.self) { offset in
-            print(offset)
+            .scrollTargetBehavior(.viewAligned)
+            .contentMargins(20, for: .scrollContent)
+            .listRowInsets(EdgeInsets())
+            .ignoresSafeArea(edges: .bottom)
+            .onAppear {
+                proxy.scrollTo(selectedItemID)
+            }
         }
     }
 }
