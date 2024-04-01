@@ -17,9 +17,11 @@ struct ContentView: View {
             if navigator.isWelcomeViewPresented {
                 WelcomeIntroView()
                     .environment(navigator)
+                    .transition(.move(edge: .bottom))
             } else {
                 if prefersTabNavigation {
                     AppTabView()
+                        .transition(.move(edge: .bottom))
                 } else {
                     VStack {
                         NavigationSplitView {
@@ -31,6 +33,7 @@ struct ContentView: View {
                         
                         PlayerView()
                     }
+                    .transition(.move(edge: .bottom))
                 }
             }
         }

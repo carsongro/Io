@@ -13,7 +13,7 @@ struct ImpossibleText: View {
     #endif
     
     var body: some View {
-        Text("Dream")
+        Text("Io")
             .font(.system(size: 60))
             .fontWeight(.bold)
             .fixedSize(horizontal: true, vertical: true)

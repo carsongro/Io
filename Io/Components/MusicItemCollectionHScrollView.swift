@@ -35,7 +35,7 @@ struct MusicItemCollectionHScrollView: View {
         .scrollTargetBehavior(.viewAligned(limitBehavior: .never))
         .fullScreenCover(item: $selectedItem) { item in
             BrowseHScrollCardView(items: items, selectedItemID: item.id)
-                .presentationBackground(.ultraThinMaterial)
+                .presentationBackground(.thickMaterial)
         }
     }
 }

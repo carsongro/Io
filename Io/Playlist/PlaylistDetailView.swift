@@ -33,7 +33,7 @@ struct PlaylistDetailView: View {
     var body: some View {
         Group {
             if let detailedPlaylist {
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     VStack {
                         LazyVStack {
                             Color.clear
@@ -63,14 +63,11 @@ struct PlaylistDetailView: View {
                         }
                     }
                 }
-                .listSectionSpacing(10)
-                .listStyle(.plain)
-                .contentMargins(.bottom, 10, for: .scrollContent)
-                .scrollIndicators(.hidden)
-                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .contentMargins(.bottom, 65, for: .scrollContent)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
             } else {
                 Color.clear
-                    .frame(width: 320)
+                    .frame(width: 310)
             }
         }
         .canOfferSubscription(for: playlist.id, messageIdentifier: .playMusic)

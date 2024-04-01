@@ -8,7 +8,6 @@
 import MusicKit
 import SwiftUI
 
-//TODO: UPDATE THIS TO IMPOSSIBLE DREAM VERSION
 struct WelcomeView: View {
     @Environment(\.openURL) private var openURL
     
@@ -36,13 +35,12 @@ struct WelcomeView: View {
             }
             
             if musicAuthorizationStatus == .notDetermined || musicAuthorizationStatus == .denied {
-                Button(buttonText) {
-                    handleButtonPressed()
-                }
-                .buttonStyle(.prominent)
-                .buttonBorderShape(.capsule)
+                Button(buttonText, action: handleButtonPressed)
+                    .buttonStyle(.prominent)
+                    .buttonBorderShape(.capsule)
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .gradientBackground()
     }
     

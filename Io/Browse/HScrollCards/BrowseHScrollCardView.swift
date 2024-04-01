@@ -12,8 +12,7 @@ struct BrowseHScrollCardView: View {
     @Environment(\.dismiss) private var dismiss
     
     let items: MusicItemCollection<MusicPersonalRecommendation.Item>
-    
-    @State var selectedItemID: MusicPersonalRecommendation.Item.ID?
+    let selectedItemID: MusicPersonalRecommendation.Item.ID?
     
     var body: some View {
         ScrollViewReader { proxy in

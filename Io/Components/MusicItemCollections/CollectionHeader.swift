@@ -25,8 +25,8 @@ struct CollectionHeader: View {
     var body: some View {
         VStack(spacing: 10) {
             if let artwork {
-                ArtworkImage(artwork, width: 320, height: 320)
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                ArtworkImage(artwork, width: 310, height: 310)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
             }
             
             Text(title)

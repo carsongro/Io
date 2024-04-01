@@ -42,8 +42,11 @@ struct WelcomeIntroView: View {
                 ForEach(WelcomeStep.all) { step in
                     Group {
                         switch step.type {
-                        case .intro: arrowUpView
-                        case .auth: WelcomeView(musicAuthorizationStatus: $navigator.musicAuthorizationStatus)
+                        case .intro: 
+                            arrowUpView
+                        case .auth: 
+                            WelcomeView(musicAuthorizationStatus: $navigator.musicAuthorizationStatus)
+                                .containerRelativeFrame(.vertical)
                         }
                     }
                     .foregroundStyle(.white)
@@ -74,6 +77,7 @@ struct WelcomeIntroView: View {
                 playingVideo = welcomePosition == 1
             }
         }
+        .onAppear(perform: CoreHapticsManager.shared.prepareHaptics)
     }
     
     private var arrowUpView: some View {
