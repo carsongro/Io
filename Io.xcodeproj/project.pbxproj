@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B82423F92BBB69C800092DF7 /* GlitchedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82423E92BBB69C800092DF7 /* GlitchedText.swift */; };
+		B82423FA2BBB69C800092DF7 /* GlitchedTextEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82423EA2BBB69C800092DF7 /* GlitchedTextEffect.swift */; };
+		B82423FB2BBB69C800092DF7 /* RedactedGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82423EC2BBB69C800092DF7 /* RedactedGrid.swift */; };
+		B82423FC2BBB69C800092DF7 /* RedactedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82423ED2BBB69C800092DF7 /* RedactedText.swift */; };
+		B82423FD2BBB69C800092DF7 /* DancingDots.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82423EF2BBB69C800092DF7 /* DancingDots.swift */; };
+		B82423FE2BBB69C800092DF7 /* EruptEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82423F02BBB69C800092DF7 /* EruptEffect.swift */; };
+		B82423FF2BBB69C800092DF7 /* ImpossibleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82423F12BBB69C800092DF7 /* ImpossibleText.swift */; };
+		B82424002BBB69C800092DF7 /* RainbowGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82423F22BBB69C800092DF7 /* RainbowGridView.swift */; };
+		B82424012BBB69C800092DF7 /* RollinRainbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82423F32BBB69C800092DF7 /* RollinRainbow.swift */; };
+		B82424022BBB69C800092DF7 /* WelcomeBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82423F42BBB69C800092DF7 /* WelcomeBackgroundView.swift */; };
+		B82424042BBB69C800092DF7 /* WelcomeIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82423F72BBB69C800092DF7 /* WelcomeIntroView.swift */; };
+		B82424082BBB6BCF00092DF7 /* CoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82424072BBB6BCF00092DF7 /* CoreHapticsManager.swift */; };
+		B824240A2BBB6BE600092DF7 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82424092BBB6BE600092DF7 /* MotionManager.swift */; };
 		B87E4E072BBA498C00B03BF9 /* MusicItemCollectionDetailModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87E4E062BBA498C00B03BF9 /* MusicItemCollectionDetailModifier.swift */; };
 		B8B32C5D2BB9FC1B005587DC /* IoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C5C2BB9FC1B005587DC /* IoApp.swift */; };
 		B8B32C5F2BB9FC1B005587DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C5E2BB9FC1B005587DC /* ContentView.swift */; };
@@ -40,6 +53,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B82423E92BBB69C800092DF7 /* GlitchedText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlitchedText.swift; sourceTree = "<group>"; };
+		B82423EA2BBB69C800092DF7 /* GlitchedTextEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlitchedTextEffect.swift; sourceTree = "<group>"; };
+		B82423EC2BBB69C800092DF7 /* RedactedGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedactedGrid.swift; sourceTree = "<group>"; };
+		B82423ED2BBB69C800092DF7 /* RedactedText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedactedText.swift; sourceTree = "<group>"; };
+		B82423EF2BBB69C800092DF7 /* DancingDots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DancingDots.swift; sourceTree = "<group>"; };
+		B82423F02BBB69C800092DF7 /* EruptEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EruptEffect.swift; sourceTree = "<group>"; };
+		B82423F12BBB69C800092DF7 /* ImpossibleText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImpossibleText.swift; sourceTree = "<group>"; };
+		B82423F22BBB69C800092DF7 /* RainbowGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainbowGridView.swift; sourceTree = "<group>"; };
+		B82423F32BBB69C800092DF7 /* RollinRainbow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollinRainbow.swift; sourceTree = "<group>"; };
+		B82423F42BBB69C800092DF7 /* WelcomeBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeBackgroundView.swift; sourceTree = "<group>"; };
+		B82423F72BBB69C800092DF7 /* WelcomeIntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeIntroView.swift; sourceTree = "<group>"; };
+		B82424072BBB6BCF00092DF7 /* CoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHapticsManager.swift; sourceTree = "<group>"; };
+		B82424092BBB6BE600092DF7 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		B87E4E062BBA498C00B03BF9 /* MusicItemCollectionDetailModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItemCollectionDetailModifier.swift; sourceTree = "<group>"; };
 		B8B32C592BB9FC1B005587DC /* Io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Io.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B32C5C2BB9FC1B005587DC /* IoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoApp.swift; sourceTree = "<group>"; };
@@ -85,6 +111,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B82423EB2BBB69C800092DF7 /* Glitch */ = {
+			isa = PBXGroup;
+			children = (
+				B82423E92BBB69C800092DF7 /* GlitchedText.swift */,
+				B82423EA2BBB69C800092DF7 /* GlitchedTextEffect.swift */,
+			);
+			path = Glitch;
+			sourceTree = "<group>";
+		};
+		B82423EE2BBB69C800092DF7 /* Redacted */ = {
+			isa = PBXGroup;
+			children = (
+				B82423EC2BBB69C800092DF7 /* RedactedGrid.swift */,
+				B82423ED2BBB69C800092DF7 /* RedactedText.swift */,
+			);
+			path = Redacted;
+			sourceTree = "<group>";
+		};
+		B82423F52BBB69C800092DF7 /* BackgroundEffects */ = {
+			isa = PBXGroup;
+			children = (
+				B82423EB2BBB69C800092DF7 /* Glitch */,
+				B82423EE2BBB69C800092DF7 /* Redacted */,
+				B82423EF2BBB69C800092DF7 /* DancingDots.swift */,
+				B82423F02BBB69C800092DF7 /* EruptEffect.swift */,
+				B82423F12BBB69C800092DF7 /* ImpossibleText.swift */,
+				B82423F22BBB69C800092DF7 /* RainbowGridView.swift */,
+				B82423F32BBB69C800092DF7 /* RollinRainbow.swift */,
+				B82423F42BBB69C800092DF7 /* WelcomeBackgroundView.swift */,
+			);
+			path = BackgroundEffects;
+			sourceTree = "<group>";
+		};
+		B82423F82BBB69C800092DF7 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				B82423F52BBB69C800092DF7 /* BackgroundEffects */,
+				B82423F72BBB69C800092DF7 /* WelcomeIntroView.swift */,
+				B8B32C6B2BB9FC5F005587DC /* WelcomeView.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 		B87E4E052BBA495A00B03BF9 /* MusicHelpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +187,7 @@
 				B8B32C632BB9FC1C005587DC /* Preview Content */,
 				B8B32C5C2BB9FC1B005587DC /* IoApp.swift */,
 				B8B32C5E2BB9FC1B005587DC /* ContentView.swift */,
-				B8B32C6B2BB9FC5F005587DC /* WelcomeView.swift */,
+				B82423F82BBB69C800092DF7 /* Welcome */,
 				B8B32C6D2BB9FC61005587DC /* Navigation */,
 				B8B32C702BB9FC71005587DC /* Library */,
 				B8B32C6F2BB9FC6D005587DC /* Search */,
@@ -212,6 +281,8 @@
 			isa = PBXGroup;
 			children = (
 				B8B32C902BB9FF57005587DC /* Extensions.swift */,
+				B82424072BBB6BCF00092DF7 /* CoreHapticsManager.swift */,
+				B82424092BBB6BE600092DF7 /* MotionManager.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -309,13 +380,22 @@
 				B8B32C892BB9FD8B005587DC /* PlaylistRow.swift in Sources */,
 				B8B32CA22BBA154D005587DC /* CollectionPlayButton.swift in Sources */,
 				B8B32C7A2BB9FCCC005587DC /* Navigator.swift in Sources */,
+				B82424012BBB69C800092DF7 /* RollinRainbow.swift in Sources */,
 				B87E4E072BBA498C00B03BF9 /* MusicItemCollectionDetailModifier.swift in Sources */,
 				B8B32C782BB9FCCC005587DC /* AppDetailColumn.swift in Sources */,
+				B82423F92BBB69C800092DF7 /* GlitchedText.swift in Sources */,
 				B8B32CA72BBA1817005587DC /* BrowseHScrollCardView.swift in Sources */,
 				B8B32C5F2BB9FC1B005587DC /* ContentView.swift in Sources */,
+				B82423FA2BBB69C800092DF7 /* GlitchedTextEffect.swift in Sources */,
 				B8B32C9D2BBA0E34005587DC /* TrackListView.swift in Sources */,
+				B82424002BBB69C800092DF7 /* RainbowGridView.swift in Sources */,
+				B82424022BBB69C800092DF7 /* WelcomeBackgroundView.swift in Sources */,
+				B82423FE2BBB69C800092DF7 /* EruptEffect.swift in Sources */,
+				B82423FB2BBB69C800092DF7 /* RedactedGrid.swift in Sources */,
 				B8B32C7F2BB9FCFE005587DC /* CollectionHeader.swift in Sources */,
 				B8B32C792BB9FCCC005587DC /* AppSidebar.swift in Sources */,
+				B82423FC2BBB69C800092DF7 /* RedactedText.swift in Sources */,
+				B82424082BBB6BCF00092DF7 /* CoreHapticsManager.swift in Sources */,
 				B8B32C6C2BB9FC5F005587DC /* WelcomeView.swift in Sources */,
 				B8B32C9B2BBA0B2E005587DC /* MusicItemCollectionHScrollView.swift in Sources */,
 				B8B32C802BB9FCFE005587DC /* SubscriptionOfferableView.swift in Sources */,
@@ -326,11 +406,15 @@
 				B8B32C8C2BB9FDCF005587DC /* PlaylistDetailView.swift in Sources */,
 				B8B32C842BB9FD3C005587DC /* SearchNavigationStack.swift in Sources */,
 				B8B32C932BBA00B0005587DC /* LibraryNavigationStack.swift in Sources */,
+				B82423FD2BBB69C800092DF7 /* DancingDots.swift in Sources */,
 				B8B32C912BB9FF57005587DC /* Extensions.swift in Sources */,
 				B8B32C8E2BB9FE1A005587DC /* AppTabView.swift in Sources */,
 				B8B32C952BBA01BB005587DC /* PlayerView.swift in Sources */,
+				B824240A2BBB6BE600092DF7 /* MotionManager.swift in Sources */,
 				B8B32C992BBA083E005587DC /* MediumMusicItemCell.swift in Sources */,
+				B82424042BBB69C800092DF7 /* WelcomeIntroView.swift in Sources */,
 				B8B32C9F2BBA0FD4005587DC /* TrackRowView.swift in Sources */,
+				B82423FF2BBB69C800092DF7 /* ImpossibleText.swift in Sources */,
 				B8B32C772BB9FCCC005587DC /* AppScreen.swift in Sources */,
 				B8B32C972BBA054F005587DC /* BrowseModel.swift in Sources */,
 			);

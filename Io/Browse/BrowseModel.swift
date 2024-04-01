@@ -31,7 +31,7 @@ final class BrowseModel {
         case items(items: MusicItemCollection<MusicPersonalRecommendation.Item>)
         var title: String {
             switch self {
-            case .items(let items):
+            case .items:
                 "Recommendations"
             }
         }

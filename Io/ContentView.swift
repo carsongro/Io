@@ -15,7 +15,8 @@ struct ContentView: View {
     var body: some View {
         Group {
             if navigator.isWelcomeViewPresented {
-                WelcomeView(musicAuthorizationStatus: $navigator.musicAuthorizationStatus)
+                WelcomeIntroView()
+                    .environment(navigator)
             } else {
                 if prefersTabNavigation {
                     AppTabView()
