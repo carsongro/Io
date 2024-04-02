@@ -9,24 +9,15 @@ import Foundation
 import MusicKit
 
 @Observable
-final class BrowseModel {
+final class BrowseModel: Sendable {
     var recommendations = MusicItemCollection<MusicPersonalRecommendation>()
     
-    init() {
-        Task {
-            do {
-                recommendations = try await getRecommendations()
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
     @MainActor
-    func getRecommendations() async throws -> MusicItemCollection<MusicPersonalRecommendation> {
+    @Sendable
+    func getRecommendations() async throws {
         var request = MusicPersonalRecommendationsRequest()
         request.limit = 10
         let response = try await request.response()
-        return response.recommendations
+        recommendations = response.recommendations
     }
 }
