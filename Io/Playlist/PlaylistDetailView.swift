@@ -40,7 +40,7 @@ struct PlaylistDetailView: View {
                                 .frame(width: 1, height: 1)
                                 .onAppear(perform: dismiss)
                         }
-                        .offset(y: -100)
+                        .offset(y: -110)
                         
                         Section {
                             VStack(spacing: 10) {

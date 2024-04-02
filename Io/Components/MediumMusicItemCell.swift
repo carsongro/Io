@@ -21,8 +21,6 @@ struct MediumMusicItemCell: View {
                 ArtworkImage(artwork, width: 175, height: 175)
                     .overlay(ContainerRelativeShape().stroke(.ultraThinMaterial, lineWidth: 0.5))
                     .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                    
-                    .shadow(color: .black.opacity(0.175), radius: 8, y: 10)
             }
             
             Text(title)
