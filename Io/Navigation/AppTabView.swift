@@ -13,7 +13,10 @@ struct AppTabView: View {
     var body: some View {
         @Bindable var navigator = navigator
         TabView(selection: $navigator.selectedScreen) {
-            AppScreen.browse.destination
+            /// For some reason using AppScreen.browse.destination when the BrowseNavigationStack declares @State private var model = BrowseModel()
+            /// causes all tabs to be unselectedable, so either removing the model from BrowseNavigationStack or using BrowseNavigationStack() here
+            /// instead of AppScreen.browse.destination fixes it. Doing it this way is easier than removing the model.
+            BrowseNavigationStack()
                 .tag(AppScreen.browse)
                 .tabItem { AppScreen.browse.label }
             
@@ -24,7 +27,6 @@ struct AppTabView: View {
             AppScreen.search.destination
                 .tag(AppScreen.search)
                 .tabItem { AppScreen.search.label }
-            
         }
     }
 }

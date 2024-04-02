@@ -24,7 +24,8 @@ final class BrowseModel {
     
     @MainActor
     func getRecommendations() async throws -> MusicItemCollection<MusicPersonalRecommendation> {
-        let request = MusicPersonalRecommendationsRequest()
+        var request = MusicPersonalRecommendationsRequest()
+        request.limit = 10
         let response = try await request.response()
         return response.recommendations
     }

@@ -26,7 +26,6 @@ struct ContentView: View {
                     VStack {
                         NavigationSplitView {
                             AppSidebar()
-                                .navigationSplitViewColumnWidth(ideal: 250, max: 500)
                         } detail: {
                             AppDetailColumn(screen: navigator.selectedScreen)
                         }
