@@ -31,7 +31,7 @@ struct BrowseHScrollCardView: View {
                         .id(item.id)
                         .scrollTransition { content, phase in
                             content
-                                .opacity(phase.isIdentity ? 1 : 0.2)
+                                .opacity(phase.isIdentity ? 1 : 0.6)
                                 .scaleEffect(phase.isIdentity ? 1 : 0.9)
                                 .blur(radius: phase.isIdentity ? 0 : 8)
                         }

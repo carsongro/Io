@@ -99,14 +99,20 @@ extension MusicPersonalRecommendation {
             }
         })
         
-        items += MusicItemCollection<MusicPersonalRecommendation.Item>(playlists.compactMap {
-            MusicPersonalRecommendation.Item.playlist($0)
-        })
-        
-        items += MusicItemCollection<MusicPersonalRecommendation.Item>(albums.compactMap {
-            MusicPersonalRecommendation.Item.album($0)
-        })
+        if items.isEmpty {
+            items += MusicItemCollection<MusicPersonalRecommendation.Item>(playlists.compactMap {
+                MusicPersonalRecommendation.Item.playlist($0)
+            })
+            
+            items += MusicItemCollection<MusicPersonalRecommendation.Item>(albums.compactMap {
+                MusicPersonalRecommendation.Item.album($0)
+            })
+        }
         
         return items
+    }
+    
+    func isMadeForYou() -> Bool {
+        title?.localizedCaseInsensitiveCompare("Made for You") == .orderedSame
     }
 }

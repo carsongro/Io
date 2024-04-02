@@ -8,10 +8,10 @@
 import SwiftUI
 import MusicKit
 
-struct MusicItemWith<Item: MusicItem>: ViewModifier where Item : MusicPropertyContainer, Item : Decodable {
-    let item: Item
-    let properties: [PartialMusicAsyncProperty<Item>]
-    let didFetch: (Item) -> Void
+public struct MusicItemWith<Item: MusicItem>: ViewModifier where Item : MusicPropertyContainer, Item : Decodable {
+    private let item: Item
+    private let properties: [PartialMusicAsyncProperty<Item>]
+    private let didFetch: (Item) -> Void
     
     init(
         _ properties: [PartialMusicAsyncProperty<Item>],
@@ -23,7 +23,7 @@ struct MusicItemWith<Item: MusicItem>: ViewModifier where Item : MusicPropertyCo
         self.didFetch = didFetch
     }
     
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content
             .onAppear {
                 Task {
@@ -43,7 +43,7 @@ struct MusicItemWith<Item: MusicItem>: ViewModifier where Item : MusicPropertyCo
 }
 
 extension View {
-    func musicItemWith<Item: MusicItem>(
+    public func musicItemWith<Item: MusicItem>(
         _ properties: PartialMusicAsyncProperty<Item>...,
         from item: Item,
         didFetch: @escaping @Sendable (Item) -> Void

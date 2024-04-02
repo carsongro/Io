@@ -8,8 +8,10 @@
 import SwiftUI
 import MusicKit
 
-struct MusicItemCollectionHScrollView: View {
+struct MusicItemCollectionHScrollView<Cell: View>: View {
+    
     var items: MusicItemCollection<MusicPersonalRecommendation.Item>
+    @ViewBuilder var cell: (_ item: MusicPersonalRecommendation.Item) -> Cell
     
     @State private var selectedItem: MusicPersonalRecommendation.Item?
     
@@ -20,11 +22,7 @@ struct MusicItemCollectionHScrollView: View {
                     Button {
                         selectedItem = item
                     } label: {
-                        MediumMusicItemCell(
-                            artwork: item.artwork,
-                            title: item.title,
-                            subtitle: item.subtitle
-                        )
+                        cell(item)
                     }
                     .buttonStyle(.plain)
                 }

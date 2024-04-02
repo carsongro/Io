@@ -35,12 +35,7 @@ struct AlbumDetailView: View {
             if let detailedAlbum {
                 ScrollView(showsIndicators: false) {
                     VStack {
-                        LazyVStack {
-                            Color.clear
-                                .frame(width: 1, height: 1)
-                                .onAppear(perform: dismiss)
-                        }
-                        .offset(y: -100)
+                        dismissIndicator
                         
                         Section {
                             VStack(spacing: 10) {
@@ -76,6 +71,15 @@ struct AlbumDetailView: View {
                 self.detailedAlbum = album
             }
         }
+    }
+    
+    private var dismissIndicator: some View {
+        LazyVStack {
+            Color.clear
+                .frame(width: 1, height: 1)
+                .onAppear(perform: dismiss)
+        }
+        .offset(y: -100)
     }
 }
 

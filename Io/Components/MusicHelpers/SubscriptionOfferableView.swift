@@ -83,7 +83,7 @@ public struct SubscriptionOfferableModifier: ViewModifier {
 }
 
 extension View {
-    func canOfferSubscription(
+    public func canOfferSubscription(
         for itemID: MusicItemID? = nil,
         messageIdentifier: MusicSubscriptionOffer.MessageIdentifier = .join,
         disableContent: Bool = false

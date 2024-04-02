@@ -9,8 +9,6 @@ import SwiftUI
 import MusicKit
 
 struct MediumMusicItemCell: View {
-    @Environment(\.prefersTabNavigation) private var prefersTabNavigation
-    
     var artwork: Artwork?
     var title: String
     var subtitle: String?
