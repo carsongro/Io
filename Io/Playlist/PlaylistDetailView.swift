@@ -59,7 +59,7 @@ struct PlaylistDetailView: View {
                         .listRowSeparator(.hidden, edges: .top)
                         
                         Section {
-                            TrackListView(tracks: detailedPlaylist.tracks)
+                            TrackListView(showArtwork: true, tracks: detailedPlaylist.tracks)
                         }
                     }
                 }
@@ -71,7 +71,7 @@ struct PlaylistDetailView: View {
             }
         }
         .canOfferSubscription(for: playlist.id, messageIdentifier: .playMusic)
-        .itemWith(.tracks, .curator, from: playlist) { playlist in
+        .musicItemWith(.tracks, .curator, from: playlist) { playlist in
             withAnimation {
                 self.detailedPlaylist = playlist
             }

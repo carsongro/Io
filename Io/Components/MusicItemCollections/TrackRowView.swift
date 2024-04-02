@@ -30,6 +30,7 @@ struct TrackRowView: View {
                         Text(String(idx + 1))
                             .foregroundStyle(.secondary)
                     }
+                    .frame(width: iconSize, height: iconSize)
             }
             
             VStack(alignment: .leading, spacing: 4) {

@@ -59,8 +59,7 @@ struct AlbumDetailView: View {
                         .listRowSeparator(.hidden, edges: .top)
                         
                         Section {
-                            TrackListView(tracks: detailedAlbum.tracks)
-                                .hideArtwork()
+                            TrackListView(showArtwork: false, tracks: detailedAlbum.tracks)
                         }
                     }
                 }
@@ -72,7 +71,7 @@ struct AlbumDetailView: View {
             }
         }
         .canOfferSubscription(for: album.id, messageIdentifier: .playMusic)
-        .itemWith(.tracks, .curator, from: album) { album in
+        .musicItemWith(.tracks, .artists, from: album) { album in
             withAnimation {
                 self.detailedAlbum = album
             }

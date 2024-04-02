@@ -9,8 +9,8 @@ import SwiftUI
 import MusicKit
 
 struct TrackListView: View {
+    var showArtwork: Bool
     let tracks: MusicItemCollection<Track>?
-    @State private var showArtwork: Bool = true
     
     var body: some View {
         if let tracks {
@@ -35,8 +35,9 @@ struct TrackListView: View {
         }
     }
     
-    func hideArtwork(_ isHidden: Bool = false) -> TrackListView {
-        self.showArtwork = !isHidden
-        return self
-    }
+//    func hideArtwork(_ isHidden: Bool = false) -> TrackListView {
+//        let listView = self
+//        listView.showArtwork = !isHidden
+//        return listView
+//    }
 }
