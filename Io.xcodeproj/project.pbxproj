@@ -20,6 +20,7 @@
 		B82424042BBB69C800092DF7 /* WelcomeIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82423F72BBB69C800092DF7 /* WelcomeIntroView.swift */; };
 		B82424082BBB6BCF00092DF7 /* CoreHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82424072BBB6BCF00092DF7 /* CoreHapticsManager.swift */; };
 		B824240A2BBB6BE600092DF7 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82424092BBB6BE600092DF7 /* MotionManager.swift */; };
+		B824240F2BBBB92D00092DF7 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824240E2BBBB92D00092DF7 /* AlbumDetailView.swift */; };
 		B87E4E072BBA498C00B03BF9 /* MusicItemCollectionDetailModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87E4E062BBA498C00B03BF9 /* MusicItemCollectionDetailModifier.swift */; };
 		B8B32C5D2BB9FC1B005587DC /* IoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C5C2BB9FC1B005587DC /* IoApp.swift */; };
 		B8B32C5F2BB9FC1B005587DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B32C5E2BB9FC1B005587DC /* ContentView.swift */; };
@@ -66,6 +67,7 @@
 		B82423F72BBB69C800092DF7 /* WelcomeIntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeIntroView.swift; sourceTree = "<group>"; };
 		B82424072BBB6BCF00092DF7 /* CoreHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHapticsManager.swift; sourceTree = "<group>"; };
 		B82424092BBB6BE600092DF7 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		B824240E2BBBB92D00092DF7 /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
 		B87E4E062BBA498C00B03BF9 /* MusicItemCollectionDetailModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItemCollectionDetailModifier.swift; sourceTree = "<group>"; };
 		B8B32C592BB9FC1B005587DC /* Io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Io.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B32C5C2BB9FC1B005587DC /* IoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoApp.swift; sourceTree = "<group>"; };
@@ -154,6 +156,14 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		B824240B2BBBAA8700092DF7 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				B824240E2BBBB92D00092DF7 /* AlbumDetailView.swift */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
 		B87E4E052BBA495A00B03BF9 /* MusicHelpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +203,7 @@
 				B8B32C6F2BB9FC6D005587DC /* Search */,
 				B8B32C6E2BB9FC65005587DC /* Browse */,
 				B8B32C722BB9FC78005587DC /* Player */,
+				B824240B2BBBAA8700092DF7 /* Album */,
 				B8B32C8A2BB9FDC6005587DC /* Playlist */,
 				B8B32C8F2BB9FF52005587DC /* General */,
 				B8B32C712BB9FC74005587DC /* Components */,
@@ -395,6 +406,7 @@
 				B8B32C7F2BB9FCFE005587DC /* CollectionHeader.swift in Sources */,
 				B8B32C792BB9FCCC005587DC /* AppSidebar.swift in Sources */,
 				B82423FC2BBB69C800092DF7 /* RedactedText.swift in Sources */,
+				B824240F2BBBB92D00092DF7 /* AlbumDetailView.swift in Sources */,
 				B82424082BBB6BCF00092DF7 /* CoreHapticsManager.swift in Sources */,
 				B8B32C6C2BB9FC5F005587DC /* WelcomeView.swift in Sources */,
 				B8B32C9B2BBA0B2E005587DC /* MusicItemCollectionHScrollView.swift in Sources */,

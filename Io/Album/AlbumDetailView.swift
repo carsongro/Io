@@ -1,38 +1,38 @@
 //
-//  PlaylistDetailView.swift
+//  AlbumDetailView.swift
 //  Io
 //
-//  Created by Carson Gross on 3/31/24.
+//  Created by Carson Gross on 4/1/24.
 //
 
 import SwiftUI
 import MusicKit
 
-struct PlaylistDetailView: View {
-    var playlist: Playlist
+struct AlbumDetailView: View {
+    var album: Album
     
-    @State private var detailedPlaylist: Playlist?
+    @State private var detailedAlbum: Album?
     
     private let dismiss: (() -> Void)?
     
     init(
-        playlist: Playlist,
+        album: Album,
         dismiss: (() -> Void)? = nil
     ) {
-        self.playlist = playlist
+        self.album = album
         self.dismiss = dismiss
     }
     
     init(
-        playlist: Playlist
+        album: Album
     ) {
-        self.playlist = playlist
+        self.album = album
         self.dismiss = nil
     }
     
     var body: some View {
         Group {
-            if let detailedPlaylist {
+            if let detailedAlbum {
                 ScrollView(showsIndicators: false) {
                     VStack {
                         LazyVStack {
@@ -45,21 +45,22 @@ struct PlaylistDetailView: View {
                         Section {
                             VStack(spacing: 10) {
                                 CollectionHeader(
-                                    artwork: detailedPlaylist.artwork,
-                                    title: detailedPlaylist.name,
-                                    ownerName: detailedPlaylist.curatorName,
-                                    description: detailedPlaylist.description,
-                                    itemCount: detailedPlaylist.tracks?.count
+                                    artwork: detailedAlbum.artwork,
+                                    title: detailedAlbum.title,
+                                    ownerName: detailedAlbum.artistName,
+                                    description: detailedAlbum.description,
+                                    itemCount: detailedAlbum.tracks?.count
                                 )
                                 
-                                CollectionPlayButton(playlist)
+                                CollectionPlayButton(album)
                                     .frame(maxWidth: .infinity)
                             }
                         }
                         .listRowSeparator(.hidden, edges: .top)
                         
                         Section {
-                            TrackListView(tracks: detailedPlaylist.tracks)
+                            TrackListView(tracks: detailedAlbum.tracks)
+                                .hideArtwork()
                         }
                     }
                 }
@@ -70,12 +71,13 @@ struct PlaylistDetailView: View {
                     .frame(width: 310)
             }
         }
-        .canOfferSubscription(for: playlist.id, messageIdentifier: .playMusic)
-        .itemWith(.tracks, .curator, from: playlist) { playlist in
+        .canOfferSubscription(for: album.id, messageIdentifier: .playMusic)
+        .itemWith(.tracks, .curator, from: album) { album in
             withAnimation {
-                self.detailedPlaylist = playlist
+                self.detailedAlbum = album
             }
         }
     }
 }
+
 

@@ -8,38 +8,46 @@
 import SwiftUI
 import MusicKit
 
-struct PlaylistWith: ViewModifier {
-    @Binding var detailedPlaylist: Playlist?
-    var playlist: Playlist
+struct ItemWith<Item: MusicItem>: ViewModifier where Item : MusicPropertyContainer, Item : Decodable {
+    let item: Item
+    let properties: [PartialMusicAsyncProperty<Item>]
+    let didFetch: (Item) -> Void
     
-    let properties: [PartialMusicAsyncProperty<Playlist>]
-    
-    init(_ properties: [PartialMusicAsyncProperty<Playlist>], from playlist: Playlist, detailedPlaylist: Binding<Optional<Playlist>>) {
-        _detailedPlaylist = detailedPlaylist
-        self.playlist = playlist
+    init(
+        _ properties: [PartialMusicAsyncProperty<Item>],
+        from item: Item,
+        didFetch: @escaping @Sendable (Item) -> Void
+    ) {
         self.properties = properties
+        self.item = item
+        self.didFetch = didFetch
     }
     
     func body(content: Content) -> some View {
         content
-            .task { await getDetailedPlaylist() }
+            .onAppear {
+                Task {
+                    await getDetailedItem()
+                }
+            }
     }
     
-    private func getDetailedPlaylist() async {
+    private func getDetailedItem() async {
         do {
-            let detailedPlaylist = try await playlist.with(properties)
-            
-            withAnimation {
-                self.detailedPlaylist = detailedPlaylist
-            }
+            let detailedItem = try await item.with(properties)
+            didFetch(detailedItem)
         } catch {
-            print("❌ Error fetching detailed playlist: \(error.localizedDescription)")
+            print("❌ Error fetching detailed MusicItem: \(error.localizedDescription)")
         }
     }
 }
 
 extension View {
-    func playlistWith(_ properties: PartialMusicAsyncProperty<Playlist>..., from playlist: Playlist, detailedPlaylist: Binding<Optional<Playlist>>) -> some View {
-        modifier(PlaylistWith(properties, from: playlist, detailedPlaylist: detailedPlaylist))
+    func itemWith<Item: MusicItem>(
+        _ properties: PartialMusicAsyncProperty<Item>...,
+        from item: Item,
+        didFetch: @escaping @Sendable (Item) -> Void
+    ) -> some View where Item : MusicPropertyContainer, Item : Decodable {
+        modifier(ItemWith(properties, from: item, didFetch: didFetch))
     }
 }

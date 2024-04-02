@@ -21,14 +21,13 @@ struct BrowseHScrollCardView: View {
                     ForEach(items) { item in
                         Group {
                             switch item {
-                            case .playlist(let playlist):
-                                PlaylistDetailView(playlist: playlist) { dismiss() }
-                                    .containerRelativeFrame(.horizontal)
-                                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                            default:
-                                EmptyView()
+                            case .playlist(let playlist): PlaylistDetailView(playlist: playlist) { dismiss() }
+                            case .album(let album): AlbumDetailView(album: album) { dismiss() }
+                            default: EmptyView()
                             }
                         }
+                        .containerRelativeFrame(.horizontal)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
                         .id(item.id)
                         .scrollTransition { content, phase in
                             content

@@ -10,60 +10,22 @@ import MusicKit
 
 @Observable
 final class BrowseModel {
-    private var playlists = MusicItemCollection<Playlist>()
-    private var albums = MusicItemCollection<Album>()
-    private var recommendations = MusicItemCollection<MusicPersonalRecommendation>()
-    
-    enum BrowseSection: Identifiable, Hashable {
-        var id: Self { self }
-        
-//        case playlists(playlists: MusicItemCollection<Playlist>)
-//        case albums(albums: MusicItemCollection<Album>)
-//        
-//        var title: String {
-//            switch self {
-//            case .playlists:
-//                "Playlists"
-//            case .albums:
-//                "Albums"
-//            }
-//        }
-        case items(items: MusicItemCollection<MusicPersonalRecommendation.Item>)
-        var title: String {
-            switch self {
-            case .items:
-                "Recommendations"
-            }
-        }
-    }
-    
-    var sections = [BrowseSection]()
+    var recommendations = MusicItemCollection<MusicPersonalRecommendation>()
     
     init() {
         Task {
-            await fetchData()
+            do {
+                recommendations = try await getRecommendations()
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
     
     @MainActor
-    func fetchData() async {
-        do {
-            let request = MusicPersonalRecommendationsRequest()
-            let response = try await request.response()
-            recommendations = MusicItemCollection<MusicPersonalRecommendation>(response.recommendations)
-            recommendations.forEach { rec in
-                albums += rec.albums
-                playlists += rec.playlists
-            }
-            if let items = recommendations.first?.items {
-                sections.append(
-                    contentsOf: [
-                        .items(items: items)
-                    ]
-                )
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
+    func getRecommendations() async throws -> MusicItemCollection<MusicPersonalRecommendation> {
+        let request = MusicPersonalRecommendationsRequest()
+        let response = try await request.response()
+        return response.recommendations
     }
 }
