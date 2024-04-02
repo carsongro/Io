@@ -18,7 +18,7 @@ struct ThrowingView<Content, Label, Description>: View where Content: View, Labe
     /// Creates an interface, consisting of a label and additional content, that you
     /// display when the content of your app is unavailable to users. When the content
     /// is available, it displays the default content.
-    ///  
+    ///
     /// - Parameters:
     ///   - content: The content that is displayed without and error.
     ///   - label: The label that describes the view.
@@ -37,22 +37,20 @@ struct ThrowingView<Content, Label, Description>: View where Content: View, Labe
     }
     
     var body: some View {
-        Group {
-            if showErrorState {
-                ContentUnavailableView(label: label, description: description) {
-                    Button("Retry", action: doOperation)
-                        .padding(6)
-                        .foregroundStyle(.secondary)
-                        .background(
-                            RoundedRectangle(cornerRadius: 4)
-                                .stroke(.secondary)
-                        )
-                }
-            } else {
-                content
+        if showErrorState {
+            ContentUnavailableView(label: label, description: description) {
+                Button("Retry", action: doOperation)
+                    .padding(6)
+                    .foregroundStyle(.secondary)
+                    .background(
+                        RoundedRectangle(cornerRadius: 4)
+                            .stroke(.secondary)
+                    )
             }
+        } else {
+            content
+                .onAppear(perform: doOperation)
         }
-        .onAppear(perform: doOperation)
     }
     
     func doOperation() {

@@ -20,7 +20,7 @@ struct BrowseNavigationStack: View {
             } label: {
                 Text("Error")
             } description: {
-                Text("There was an issue loading data.")
+                Text("There was an error loading data.")
             } operation: {
                 try await model.getRecommendations()
             }
