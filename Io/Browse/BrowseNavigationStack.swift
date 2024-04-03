@@ -13,17 +13,16 @@ struct BrowseNavigationStack: View {
     
     var body: some View {
         NavigationStack {
-            ThrowingView {
-                BrowseGridView()
-                    .environment(model)
-                    .navigationTitle("Browse")
-            } label: {
-                Text("Error")
-            } description: {
-                Text("There was an error loading data.")
-            } operation: {
-                try await model.getRecommendations()
-            }
+            BrowseGridView()
+                .environment(model)
+                .navigationTitle("Browse")
+        }
+        .throwingView {
+            Text("Error")
+        } description: {
+            Text("There was an error loading data.")
+        } operation: {
+            try await model.getRecommendations()
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  MusicItemCollectionDetailModifier.swift
+//  MusicItemWithViewModifier.swift
 //  Io
 //
 //  Created by Carson Gross on 3/31/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 import MusicKit
 
-public struct MusicItemWith<Item: MusicItem>: ViewModifier where Item : MusicPropertyContainer, Item : Decodable {
+public struct MusicItemWithViewModifier<Item: MusicItem>: ViewModifier where Item : MusicPropertyContainer, Item : Decodable {
     private let item: Item
     private let properties: [PartialMusicAsyncProperty<Item>]
     private let didFetch: (Item) -> Void
@@ -48,6 +48,6 @@ extension View {
         from item: Item,
         didFetch: @escaping @Sendable (Item) -> Void
     ) -> some View where Item : MusicPropertyContainer, Item : Decodable {
-        modifier(MusicItemWith(properties, from: item, didFetch: didFetch))
+        modifier(MusicItemWithViewModifier(properties, from: item, didFetch: didFetch))
     }
 }
