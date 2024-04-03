@@ -24,21 +24,21 @@ public struct MusicItemWith<Item: MusicItem>: ViewModifier where Item : MusicPro
     }
     
     public func body(content: Content) -> some View {
-        content
-            .onAppear {
-                Task {
-                    await getDetailedItem()
-                }
-            }
+        ThrowingView {
+            content
+        } label: {
+            Text("Error")
+        } description: {
+            Text("There was an error loading data.")
+        } operation: {
+            try await getDetailedItem()
+        }
+
     }
     
-    private func getDetailedItem() async {
-        do {
-            let detailedItem = try await item.with(properties)
-            didFetch(detailedItem)
-        } catch {
-            print("❌ Error fetching detailed MusicItem: \(error.localizedDescription)")
-        }
+    private func getDetailedItem() async throws {
+        let detailedItem = try await item.with(properties)
+        didFetch(detailedItem)
     }
 }
 

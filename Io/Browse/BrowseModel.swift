@@ -9,8 +9,8 @@ import Foundation
 import MusicKit
 
 @Observable
-final class BrowseModel: Sendable {
-    var recommendations = MusicItemCollection<MusicPersonalRecommendation>()
+final class BrowseModel: @unchecked Sendable {
+    private(set) var recommendations = MusicItemCollection<MusicPersonalRecommendation>()
     
     @MainActor
     @Sendable
