@@ -66,11 +66,8 @@ struct AlbumDetailView: View {
             }
         }
         .canOfferSubscription(for: album.id, messageIdentifier: .playMusic)
-        .musicItemWith(.tracks, .artists, from: album) { album in
-            withAnimation {
-                self.detailedAlbum = album
-            }
-        }
+        .animation(.default, value: detailedAlbum)
+        .musicItemWith(.tracks, .artists, from: album, detailedItem: $detailedAlbum)
     }
     
     private var dismissIndicator: some View {

@@ -24,7 +24,7 @@ struct AppTabView: View {
                 .tag(AppScreen.library)
                 .tabItem { AppScreen.library.label }
             
-            AppScreen.search.destination
+            SearchNavigationStack()
                 .tag(AppScreen.search)
                 .tabItem { AppScreen.search.label }
         }

@@ -8,80 +8,83 @@
 import Foundation
 import MusicKit
 
-//extension MusicCatalogSearchResponse.TopResult: FilterableMusicItem {
-//    public typealias FilterType = TopResultFilter
-//}
+//MARK: - READ THIS
+///MANY METHODS ARE COMMENTED OUT BECAUSE `CatalogFilterIdentifyingItem` PROTOCOL IS NOT PUBLIC :( I HOPE IT PUBLIC SOMEDAY 👍
+//MARK: - READ THIS
 
 @Observable
 final class SearchModel {
     var topResults = MusicItemCollection<MusicBrowseItem>()
-    var recentlyViewedResults = MusicItemCollection<MusicBrowseItem>()
-    var searchTerm = ""
+//    var recentlyViewedResults = MusicItemCollection<MusicBrowseItem>()
+    var searchTerm = "" {
+        didSet {
+            requestUpdatedSearchResults(for: searchTerm)
+        }
+    }
     
-    private let recentlyViewedResultsIdentifiersKey = "recently-viewed-results-identifiers"
-    private let maximumNumberOfRecentlyViewedResults = 10
+//    private let recentlyViewedResultsIdentifiersKey = "recently-viewed-results-identifiers"
+//    private let maximumNumberOfRecentlyViewedResults = 10
 
     /// Retrieves recently viewed results identifiers from `UserDefaults`.
-    private var recentlyViewedResultsIDs: [MusicItemID] {
-        get {
-            let rawRecentlyViewedResultIdentifiers = UserDefaults.standard.array(forKey: recentlyViewedResultsIdentifiersKey) ?? []
-            let recentlyViewedResultIDs = rawRecentlyViewedResultIdentifiers.compactMap { identifier -> MusicItemID? in
-                var itemID: MusicItemID?
-                if let stringIdentifier = identifier as? String {
-                    itemID = MusicItemID(stringIdentifier)
-                }
-                return itemID
-            }
-            return recentlyViewedResultIDs
-        }
-        set {
-            UserDefaults.standard.set(newValue.map(\.rawValue), forKey: recentlyViewedResultsIdentifiersKey)
-            loadRecentlyViewedResults()
-        }
-    }
+//    private var recentlyViewedResultsIDs: [MusicItemID] {
+//        get {
+//            let rawRecentlyViewedResultIdentifiers = UserDefaults.standard.array(forKey: recentlyViewedResultsIdentifiersKey) ?? []
+//            let recentlyViewedResultIDs = rawRecentlyViewedResultIdentifiers.compactMap { identifier -> MusicItemID? in
+//                var itemID: MusicItemID?
+//                if let stringIdentifier = identifier as? String {
+//                    itemID = MusicItemID(stringIdentifier)
+//                }
+//                return itemID
+//            }
+//            return recentlyViewedResultIDs
+//        }
+//        set {
+//            UserDefaults.standard.set(newValue.map(\.rawValue), forKey: recentlyViewedResultsIdentifiersKey)
+//            loadRecentlyViewedResults()
+//        }
+//    }
     
     /// Clears recently viewed result identifiers from `UserDefaults`.
-    func reset() {
-        self.recentlyViewedResultsIDs = []
-    }
+//    func reset() {
+//        self.recentlyViewedResultsIDs = []
+//    }
     
-    /// Adds an album to the viewed album identifiers in `UserDefaults`.
-    func update(with recentlyViewedResult: Album) {
-        var recentlyViewedResultsIDs = self.recentlyViewedResultsIDs
-        if let index = recentlyViewedResultsIDs.firstIndex(of: recentlyViewedResult.id) {
-            recentlyViewedResultsIDs.remove(at: index)
-        }
-        recentlyViewedResultsIDs.insert(recentlyViewedResult.id, at: 0)
-        while recentlyViewedResultsIDs.count > maximumNumberOfRecentlyViewedResults {
-            recentlyViewedResultsIDs.removeLast()
-        }
-        self.recentlyViewedResultsIDs = recentlyViewedResultsIDs
-    }
+    /// Adds an result to the viewed result identifiers in `UserDefaults`.
+//    func update(with recentlyViewedResult: MusicBrowseItem) {
+//        var recentlyViewedResultsIDs = self.recentlyViewedResultsIDs
+//        if let index = recentlyViewedResultsIDs.firstIndex(of: recentlyViewedResult.id) {
+//            recentlyViewedResultsIDs.remove(at: index)
+//        }
+//        recentlyViewedResultsIDs.insert(recentlyViewedResult.id, at: 0)
+//        while recentlyViewedResultsIDs.count > maximumNumberOfRecentlyViewedResults {
+//            recentlyViewedResultsIDs.removeLast()
+//        }
+//        self.recentlyViewedResultsIDs = recentlyViewedResultsIDs
+//    }
     
     /// Updates the recently viewed results when MusicKit authorization status changes.
-    func loadRecentlyViewedResults() {
-        let recentlyViewedResultsIDs = self.recentlyViewedResultsIDs
-        if recentlyViewedResultsIDs.isEmpty {
-            self.recentlyViewedResults = []
-        } else {
-            Task {
-                do {
-                    let resultsRequest = MusicCatalogResourceRequest<MusicBrowseItem>(matching: \.id, memberOf: recentlyViewedResultsIDs)
-                    let resultsResponse = try await resultsRequest.response()
-                    await self.updateRecentlyViewedResults(resultsResponse.items)
-                } catch {
-                    print("Failed to load albums for recently viewed album IDs: \(recentlyViewedResultsIDs)")
-                }
-            }
-        }
-        
-    }
+//    func loadRecentlyViewedResults() {
+//        let recentlyViewedResultsIDs = self.recentlyViewedResultsIDs
+//        if recentlyViewedResultsIDs.isEmpty {
+//            self.recentlyViewedResults = []
+//        } else {
+//            Task {
+//                do {
+//                    let resultsRequest = MusicCatalogResourceRequest<MusicBrowseItem>(matching: \.id, memberOf: recentlyViewedResultsIDs)
+//                    let resultsResponse = try await resultsRequest.response()
+//                    await self.updateRecentlyViewedResults(resultsResponse.items)
+//                } catch {
+//                    print("Failed to load results for recently viewed album IDs: \(recentlyViewedResultsIDs)")
+//                }
+//            }
+//        }
+//    }
     
     /// Safely changes `recentlyViewedResults` on the main thread.
-    @MainActor
-    private func updateRecentlyViewedResults(_ recentlyViewedAlbums: MusicItemCollection<MusicBrowseItem>) {
-        self.recentlyViewedResults = recentlyViewedResults
-    }
+//    @MainActor
+//    private func updateRecentlyViewedResults(_ recentlyViewedResults: MusicItemCollection<MusicBrowseItem>) {
+//        self.recentlyViewedResults = recentlyViewedResults
+//    }
     
     /// Safely resets the `results` property on the main thread.
     @MainActor
@@ -112,7 +115,7 @@ final class SearchModel {
                 await resetTopResults()
             } else {
                 do {
-                    // Issue a catalog search request for albums matching the search term.
+                    // Issue a catalog search request for results matching the search term.
                     var searchRequest = MusicCatalogSearchRequest(
                         term: searchTerm,
                         types: [

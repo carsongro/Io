@@ -71,11 +71,8 @@ struct PlaylistDetailView: View {
             }
         }
         .canOfferSubscription(for: playlist.id, messageIdentifier: .playMusic)
-        .musicItemWith(.tracks, .curator, from: playlist) { playlist in
-            withAnimation {
-                self.detailedPlaylist = playlist
-            }
-        }
+        .animation(.default, value: detailedPlaylist)
+        .musicItemWith(.tracks, .curator, from: playlist, detailedItem: $detailedPlaylist)
     }
 }
 

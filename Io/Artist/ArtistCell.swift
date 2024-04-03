@@ -10,29 +10,25 @@ import MusicKit
 
 struct ArtistCell: View {
     var artist: Artist
-    var didSelect: () -> Void
     
     var body: some View {
-        Button(action: didSelect) {
-            HStack {
-                if let artwork = artist.artwork {
-                    VStack {
-                        Spacer()
-                        ArtworkImage(artwork, width: 56)
-                            .clipShape(Circle())
-                        Spacer()
-                    }
-                }
-                
-                VStack(alignment: .leading) {
-                    Text(artist.name)
-                    
-                    Text("Artist")
-                        .foregroundStyle(.secondary)
+        HStack {
+            if let artwork = artist.artwork {
+                VStack {
+                    Spacer()
+                    ArtworkImage(artwork, width: 56)
+                        .clipShape(Circle())
+                    Spacer()
                 }
             }
+            
+            VStack(alignment: .leading) {
+                Text(artist.name)
+                
+                Text("Artist")
+                    .foregroundStyle(.secondary)
+            }
         }
-        .buttonStyle(.plain)
     }
 }
 

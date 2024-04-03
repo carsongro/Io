@@ -9,7 +9,7 @@ import Foundation
 import MusicKit
 
 /// An item represing something that can be browsed through.
-public enum MusicBrowseItem: MusicItem, Equatable, Hashable, Identifiable, Sendable, Decodable {
+public enum MusicBrowseItem: MusicItem, MusicCatalogSearchable, Equatable, Hashable, Identifiable, Sendable, Decodable {
     /// An item that corresponds to an album.
     case album(Album)
     
@@ -121,7 +121,7 @@ public enum MusicBrowseItem: MusicItem, Equatable, Hashable, Identifiable, Senda
         case .musicVideo:
             nil
         case .playlist(let playlist):
-            playlist.description
+            playlist.curatorName
         case .radioShow:
             nil
         case .recordLabel:

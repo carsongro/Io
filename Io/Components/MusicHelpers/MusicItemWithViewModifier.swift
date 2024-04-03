@@ -11,16 +11,16 @@ import MusicKit
 public struct MusicItemWithViewModifier<Item: MusicItem>: ViewModifier where Item : MusicPropertyContainer, Item : Decodable {
     private let item: Item
     private let properties: [PartialMusicAsyncProperty<Item>]
-    private let didFetch: (Item) -> Void
+    @Binding private var detailedItem: Item?
     
     init(
         _ properties: [PartialMusicAsyncProperty<Item>],
         from item: Item,
-        didFetch: @escaping @Sendable (Item) -> Void
+        detailedItem: Binding<Optional<Item>>
     ) {
         self.properties = properties
         self.item = item
-        self.didFetch = didFetch
+        _detailedItem = detailedItem
     }
     
     public func body(content: Content) -> some View {
@@ -37,8 +37,7 @@ public struct MusicItemWithViewModifier<Item: MusicItem>: ViewModifier where Ite
     }
     
     private func getDetailedItem() async throws {
-        let detailedItem = try await item.with(properties)
-        didFetch(detailedItem)
+        detailedItem = try await item.with(properties)
     }
 }
 
@@ -46,8 +45,8 @@ extension View {
     public func musicItemWith<Item: MusicItem>(
         _ properties: PartialMusicAsyncProperty<Item>...,
         from item: Item,
-        didFetch: @escaping @Sendable (Item) -> Void
+        detailedItem: Binding<Optional<Item>>
     ) -> some View where Item : MusicPropertyContainer, Item : Decodable {
-        modifier(MusicItemWithViewModifier(properties, from: item, didFetch: didFetch))
+        modifier(MusicItemWithViewModifier(properties, from: item, detailedItem: detailedItem))
     }
 }
