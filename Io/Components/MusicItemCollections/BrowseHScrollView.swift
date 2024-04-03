@@ -21,9 +21,16 @@ struct BrowseHScrollView: View {
                     ForEach(items) { item in
                         Group {
                             switch item {
-                            case .playlist(let playlist): PlaylistDetailView(playlist: playlist) { dismiss() }
-                            case .album(let album): AlbumDetailView(album: album) { dismiss() }
-                            default: EmptyView() //TODO: Add other cases
+                            case .playlist(let playlist): 
+                                PlaylistDetailView(playlist: playlist) { dismiss() }
+                            case .album(let album):
+                                AlbumDetailView(album: album) { dismiss() }
+                            case .artist(let artist):
+                                EmptyView()
+                            case .song(let song):
+                                EmptyView()
+                            default: 
+                                EmptyView()
                             }
                         }
                         .containerRelativeFrame(.horizontal)

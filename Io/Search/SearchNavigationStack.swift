@@ -11,6 +11,8 @@ import MusicKit
 struct SearchNavigationStack: View {
     @State private var model = SearchModel()
     
+    @State private var selectedResult: MusicBrowseItem?
+    
     var body: some View {
         @Bindable var model = model
         NavigationStack {
@@ -27,6 +29,10 @@ struct SearchNavigationStack: View {
             .navigationTitle("Search")
             .searchable(text: $model.searchTerm, prompt: "Albums, Songs, and Artists")
             .musicNavigationDestinations()
+            .fullScreenCover(item: $selectedResult) { item in
+                BrowseHScrollView(items: model.topResults, selectedItemID: item.id)
+                    .presentationBackground(.thickMaterial)
+            }
         }
     }
     
@@ -42,10 +48,20 @@ struct SearchNavigationStack: View {
             Section {
                 ForEach(model.topResults.isEmpty ? model.recentlyViewedResults : model.topResults) { result in
                     switch result {
-                    case .album(let album): EmptyView()
-                    case .artist(let artist): EmptyView()
-                    case .song(let song): EmptyView()
-                    default: EmptyView() //TODO: Add more cases
+                    case .album(let album):
+                        AlbumCell(album) {
+                            selectedResult = MusicBrowseItem.album(album)
+                        }
+                    case .artist(let artist):
+                        ArtistCell(artist: artist) {
+                            selectedResult = MusicBrowseItem.artist(artist)
+                        }
+                    case .song(let song):
+                        SongCell(song) {
+                            selectedResult = MusicBrowseItem.song(song)
+                        }
+                    default: 
+                        EmptyView() // TODO: Add more cases
                     }
                 }
             }

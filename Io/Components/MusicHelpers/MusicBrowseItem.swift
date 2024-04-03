@@ -8,6 +8,7 @@
 import Foundation
 import MusicKit
 
+/// An item represing something that can be browsed through.
 public enum MusicBrowseItem: MusicItem, Equatable, Hashable, Identifiable, Sendable, Decodable {
     /// An item that corresponds to an album.
     case album(Album)
