@@ -1,5 +1,5 @@
 //
-//  BrowseHScrollCardView.swift
+//  BrowseHScrollView.swift
 //  Io
 //
 //  Created by Carson Gross on 3/31/24.
@@ -8,11 +8,11 @@
 import SwiftUI
 import MusicKit
 
-struct BrowseHScrollCardView: View {
+struct BrowseHScrollView: View {
     @Environment(\.dismiss) private var dismiss
     
-    let items: MusicItemCollection<MusicPersonalRecommendation.Item>
-    let selectedItemID: MusicPersonalRecommendation.Item.ID?
+    let items: MusicItemCollection<MusicBrowseItem>
+    let selectedItemID: MusicBrowseItem.ID?
     
     var body: some View {
         ScrollViewReader { proxy in
@@ -23,7 +23,7 @@ struct BrowseHScrollCardView: View {
                             switch item {
                             case .playlist(let playlist): PlaylistDetailView(playlist: playlist) { dismiss() }
                             case .album(let album): AlbumDetailView(album: album) { dismiss() }
-                            default: EmptyView()
+                            default: EmptyView() //TODO: Add other cases
                             }
                         }
                         .containerRelativeFrame(.horizontal)

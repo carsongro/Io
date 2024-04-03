@@ -8,12 +8,12 @@
 import SwiftUI
 import MusicKit
 
-struct MusicItemCollectionHScrollView<Cell: View>: View {
+struct MusicItemCollectionMediumHScrollView<Cell: View>: View {
     
-    var items: MusicItemCollection<MusicPersonalRecommendation.Item>
-    @ViewBuilder var cell: (_ item: MusicPersonalRecommendation.Item) -> Cell
+    var items: MusicItemCollection<MusicBrowseItem>
+    @ViewBuilder var cell: (_ item: MusicBrowseItem) -> Cell
     
-    @State private var selectedItem: MusicPersonalRecommendation.Item?
+    @State private var selectedItem: MusicBrowseItem?
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -32,7 +32,7 @@ struct MusicItemCollectionHScrollView<Cell: View>: View {
         .contentMargins(.horizontal, 16, for: .scrollContent)
         .scrollTargetBehavior(.viewAligned(limitBehavior: .never))
         .fullScreenCover(item: $selectedItem) { item in
-            BrowseHScrollCardView(items: items, selectedItemID: item.id)
+            BrowseHScrollView(items: items, selectedItemID: item.id)
                 .presentationBackground(.thickMaterial)
         }
     }

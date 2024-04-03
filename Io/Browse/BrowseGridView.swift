@@ -13,7 +13,7 @@ struct BrowseGridView: View {
     var body: some View {
         List {
             ForEach(model.recommendations) { rec in
-                let items = rec.items()
+                let items = rec.browseItems()
                 
                 if !items.isEmpty {
                     Section {
@@ -22,7 +22,7 @@ struct BrowseGridView: View {
                             .foregroundStyle(.primary)
                             .padding(.leading, 16)
                         
-                        MusicItemCollectionHScrollView(items: items) { item in
+                        MusicItemCollectionMediumHScrollView(items: items) { item in
                             if rec.isMadeForYou() {
                                 LargeMusicItemCell(artwork: item.artwork, title: item.title, subtitle: item.subtitle)
                             } else {
