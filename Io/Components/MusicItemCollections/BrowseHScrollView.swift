@@ -26,10 +26,8 @@ struct BrowseHScrollView: View {
                             case .album(let album):
                                 AlbumDetailView(album: album) { dismiss() }
                             case .artist(let artist):
-                                EmptyView()
-                            case .song(let song):
-                                EmptyView()
-                            default: 
+                                ArtistDetailView(artist: artist) { dismiss() }
+                            default:
                                 EmptyView()
                             }
                         }
@@ -47,7 +45,7 @@ struct BrowseHScrollView: View {
                 .scrollTargetLayout()
             }
             .scrollTargetBehavior(.viewAligned)
-            .contentMargins(20, for: .scrollContent)
+            .contentMargins(.horizontal, 20, for: .scrollContent)
             .listRowInsets(EdgeInsets())
             .ignoresSafeArea(edges: .bottom)
             .onAppear {

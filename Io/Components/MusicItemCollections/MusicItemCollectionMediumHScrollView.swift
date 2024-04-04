@@ -35,5 +35,6 @@ struct MusicItemCollectionMediumHScrollView<Cell: View>: View {
             BrowseHScrollView(items: items, selectedItemID: item.id)
                 .presentationBackground(.thickMaterial)
         }
+        .listRowInsets(EdgeInsets())
     }
 }

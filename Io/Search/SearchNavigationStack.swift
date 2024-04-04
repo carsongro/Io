@@ -38,18 +38,27 @@ struct SearchNavigationStack: View {
             Section {
                 ForEach(model.topResults) { result in
                     Button {
-                        selectedResult = result
-                    } label: {
                         switch result {
-                        case .album(let album):
-                            AlbumCell(album)
-                        case .artist(let artist):
-                            ArtistCell(artist: artist)
                         case .song(let song):
-                            SongCell(song)
+                            // TODO: Play song
+                            break
                         default:
-                            EmptyView() // TODO: Add more cases
+                            selectedResult = result
                         }
+                    } label: {
+                        Group {
+                            switch result {
+                            case .album(let album):
+                                AlbumCell(album)
+                            case .artist(let artist):
+                                ArtistCell(artist: artist)
+                            case .song(let song):
+                                SongCell(song)
+                            default:
+                                EmptyView() // TODO: Add more cases
+                            }
+                        }
+                        .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
                 }

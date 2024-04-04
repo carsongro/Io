@@ -40,6 +40,7 @@ struct MusicItemCell: View {
             
             Spacer()
         }
+        .contentShape(Rectangle())
     }
 }
 

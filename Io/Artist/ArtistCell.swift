@@ -29,6 +29,7 @@ struct ArtistCell: View {
                     .foregroundStyle(.secondary)
             }
         }
+        .contentShape(Rectangle())
     }
 }
 
