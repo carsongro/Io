@@ -6,11 +6,26 @@
 //
 
 import SwiftUI
+import MusicKit
 
 struct LibraryNavigationStack: View {
+    @State private var model = MusicLibraryManager.shared
+    
+    private var items: MusicItemCollection<MusicBrowseItem> {
+        MusicItemCollection<MusicBrowseItem>(model.playlists.map { MusicBrowseItem.playlist($0) })
+    }
+    
     var body: some View {
         NavigationStack {
-            Text("Library")
+            LibraryPlaylistList(items: items)
+                .navigationTitle("Library")
+                .throwingView {
+                    Text("Error")
+                } description: {
+                    Text("There was an error fetching your library.")
+                } operation: {
+                    try await model.fetchLibraryPlaylists()
+                }
         }
     }
 }

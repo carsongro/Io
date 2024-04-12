@@ -33,7 +33,6 @@ public struct MusicItemWithViewModifier<Item: MusicItem>: ViewModifier where Ite
         } operation: {
             try await getDetailedItem()
         }
-
     }
     
     private func getDetailedItem() async throws {

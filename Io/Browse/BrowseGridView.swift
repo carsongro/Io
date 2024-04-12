@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import MusicKit
 
 struct BrowseGridView: View {
-    @Environment(BrowseModel.self) private var model
+    var recommendations: MusicItemCollection<MusicPersonalRecommendation>
     
     var body: some View {
         List {
-            ForEach(model.recommendations) { rec in
+            ForEach(recommendations) { rec in
                 let items = rec.browseItems()
                 
                 if !items.isEmpty {
@@ -39,9 +40,4 @@ struct BrowseGridView: View {
         .contentMargins(.bottom, 65, for: .scrollContent)
         .listStyle(.plain)
     }
-}
-
-#Preview {
-    BrowseGridView()
-        .environment(BrowseModel())
 }

@@ -8,13 +8,12 @@
 import SwiftUI
 import MusicKit
 
-struct BrowseNavigationStack: View {
-    @State private var model = BrowseModel()
+struct BrowseNavigationStack: View, @unchecked Sendable {
+    @State private var recommendations = MusicItemCollection<MusicPersonalRecommendation>()
     
     var body: some View {
         NavigationStack {
-            BrowseGridView()
-                .environment(model)
+            BrowseGridView(recommendations: recommendations)
                 .navigationTitle("Browse")
         }
         .throwingView {
@@ -22,11 +21,16 @@ struct BrowseNavigationStack: View {
         } description: {
             Text("There was an error loading data.")
         } operation: {
-            try await model.getRecommendations()
+            try await getRecommendations()
         }
     }
-}
-
-#Preview {
-    BrowseNavigationStack()
+    
+    @MainActor
+    @Sendable
+    func getRecommendations() async throws {
+        var request = MusicPersonalRecommendationsRequest()
+        request.limit = 10
+        let response = try await request.response()
+        recommendations = response.recommendations
+    }
 }
