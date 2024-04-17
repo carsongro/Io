@@ -17,7 +17,7 @@ struct MusicItemCollectionMediumHScrollView<Cell: View>: View {
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack {
+            LazyHStack {
                 ForEach(items) { item in
                     Button {
                         selectedItem = item
@@ -28,6 +28,7 @@ struct MusicItemCollectionMediumHScrollView<Cell: View>: View {
                 }
             }
             .scrollTargetLayout()
+            // TODO: UPDATE BACKGROUND TO BE MATCHING COLOR
         }
         .contentMargins(.horizontal, 16, for: .scrollContent)
         .scrollTargetBehavior(.viewAligned(limitBehavior: .never))

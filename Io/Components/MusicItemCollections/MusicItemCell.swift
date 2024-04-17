@@ -14,13 +14,14 @@ struct MusicItemCell: View {
     var artwork: Artwork?
     var title: String
     var subtitle: String?
+    var width: CGFloat = 50.0
     
     var body: some View {
         HStack {
             if let artwork {
                 VStack {
                     Spacer()
-                    ArtworkImage(artwork, width: 50)
+                    ArtworkImage(artwork, width: width)
                         .cornerRadius(6)
                     Spacer()
                 }

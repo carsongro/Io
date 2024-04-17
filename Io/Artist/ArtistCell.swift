@@ -28,6 +28,8 @@ struct ArtistCell: View {
                 Text("Artist")
                     .foregroundStyle(.secondary)
             }
+            
+            Spacer()
         }
         .contentShape(Rectangle())
     }

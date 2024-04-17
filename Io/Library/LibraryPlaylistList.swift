@@ -21,11 +21,21 @@ struct LibraryPlaylistList: View {
                 MusicItemCell(
                     artwork: item.artwork,
                     title: item.title,
-                    subtitle: item.subtitle
+                    subtitle: item.subtitle,
+                    width: 65
                 )
             }
             .buttonStyle(.plain)
+            .listRowInsets(
+                EdgeInsets(
+                    top: 5,
+                    leading: 20,
+                    bottom: 5,
+                    trailing: 20
+                )
+            )
         }
+        .listStyle(.plain)
         .fullScreenCover(item: $selectedItem) { item in
             BrowseHScrollView(items: items, selectedItemID: item.id)
                 .presentationBackground(.thickMaterial)
