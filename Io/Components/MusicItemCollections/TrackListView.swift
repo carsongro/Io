@@ -34,10 +34,4 @@ struct TrackListView: View {
             }
         }
     }
-    
-//    func hideArtwork(_ isHidden: Bool = false) -> TrackListView {
-//        let listView = self
-//        listView.showArtwork = !isHidden
-//        return listView
-//    }
 }

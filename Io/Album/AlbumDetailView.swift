@@ -34,7 +34,7 @@ struct AlbumDetailView: View {
         Group {
             if let detailedAlbum {
                 ScrollView(showsIndicators: false) {
-                    VStack {
+                    LazyVStack {
                         dismissIndicator
                         
                         Section {

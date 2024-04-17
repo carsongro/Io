@@ -34,7 +34,7 @@ struct PlaylistDetailView: View {
         Group {
             if let detailedPlaylist {
                 ScrollView(showsIndicators: false) {
-                    VStack {
+                    LazyVStack {
                         LazyVStack {
                             Color.clear
                                 .frame(width: 1, height: 1)
