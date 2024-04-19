@@ -2,4 +2,4 @@
 
 # Io
 
-Io is a MusicKit based app with an alternative form of navigation!
+Io is a MusicKit based app with an alternative form of navigation! In the normal Music app, in order to browse through Albums, Playlists, Artists etc. users must go in and out of navigation, waiting for the item to load each time. In Io, opening music items loads other related items and users can switch between them by swiping!
